@@ -24,7 +24,7 @@ func main() {
 	}
 
 	http.HandleFunc("POST /", func(w http.ResponseWriter, r *http.Request) {
-		log.Printf("Got new request from %s", r.Host)
+		log.Printf("Got new request from %s", r.RemoteAddr)
 
 		for _, client := range config.Clients {
 			if _, err := http.Post(client, "text/plain", nil); err != nil {
