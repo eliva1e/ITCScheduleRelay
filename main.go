@@ -24,13 +24,13 @@ func main() {
 	}
 
 	http.HandleFunc("POST /", func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("Got new request from %s", r.Host)
+
 		for _, client := range config.Clients {
 			if _, err := http.Post(client, "text/plain", nil); err != nil {
 				log.Printf("Failed to access %v: %v", client, err)
 			}
 		}
-
-		log.Printf("Got new request from %s", r.Host)
 	})
 
 	log.Printf("Starting schedule relay on %s...", config.Address)
