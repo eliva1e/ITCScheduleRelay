@@ -1,0 +1,7 @@
+{
+  "address": ":8080",
+  "clients": [
+    "http://1.1.1.1/blablabla",
+    "http://1.1.1.1/blabla"
+  ]
+}
