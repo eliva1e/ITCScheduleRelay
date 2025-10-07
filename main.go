@@ -15,12 +15,12 @@ type Config struct {
 func main() {
 	file, err := os.ReadFile("config.json")
 	if err != nil {
-		log.Printf("Failed to read config: %v", err)
+		log.Fatalf("Failed to read config: %v", err)
 	}
 
 	var config Config
 	if err := json.Unmarshal(file, &config); err != nil {
-		log.Printf("Failed to parse config: %v", err)
+		log.Fatalf("Failed to parse config: %v", err)
 	}
 
 	http.HandleFunc("POST /", func(w http.ResponseWriter, r *http.Request) {
