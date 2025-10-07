@@ -1,6 +1,6 @@
 # IT College Schedule Relay
 
-Used for receiving HTTP schedule events and resending it to specified servers
+Used for receiving HTTP events and resending them to the specified servers
 
 ## Config
 
